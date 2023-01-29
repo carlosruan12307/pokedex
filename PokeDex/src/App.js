@@ -23,13 +23,13 @@ function App() {
     steel: "#B7B7CE",
     fairy: "#D685AD",
   };
-  var color = "";
+ 
   useEffect(() => {
     getdata();
   }, []);
 
   async function getdata() {
-    await fetch("https://pokeapi.co/api/v2/pokemon?limit=100", {
+    await fetch("https://pokeapi.co/api/v2/pokemon?limit=200", {
       method: "get",
     })
       .then((res) => res.json())
@@ -42,7 +42,7 @@ function App() {
   return (
     <div>
       {console.log(data)}
-      <nav className="navbar  navbar-expand-md   bg-dark">
+      <nav className="navbar  navbar-expand-md">
         <button
           data-bs-toggle="collapse"
           data-bs-target="#teste"
@@ -72,25 +72,30 @@ function App() {
       <div className="row container-fluid  container_pokemons">
         {data ? (
           data.map((data) => {
+            var color = "";
+            var type = data.types[0].type.name;
             Object.keys(colors).map((key) => {
-              if (data.types[0].type.name === key) {
+              if (type === key) {
                 color = colors[key];
-                console.log(color);
               }
             });
-
-            return (
-              <div className="card" style={{ backgroundColor: `${color}` }}>
-                <div className="card-body">
-                  <img
-                    className="pokemon  w-100"
-                    alt=""
-                    key={data.sprites.front_default}
-                    src={data.sprites.front_default}
-                  ></img>
+            if (data.sprites.front_default) {
+              return (
+                <div className="card" style={{ backgroundColor: `${color}` }}>
+                  <div className="card-header">
+                    <img
+                      className="pokemon  w-100"
+                      alt=""
+                      key={data.sprites.front_default}
+                      src={data.sprites.front_default}
+                    ></img>
+                  </div>
+                  <div className="card-body">
+<h3 className="h-colorido">{data.name}</h3>
+                  </div>
                 </div>
-              </div>
-            );
+              );
+            }
           })
         ) : (
           <div className="d-flex pai">
@@ -99,7 +104,6 @@ function App() {
             <div className="load"></div>
           </div>
         )}
-        
       </div>
     </div>
   );

@@ -3,8 +3,20 @@
   padding: 0px;
   margin: 0px;
 }
+@font-face{
+font-family: 'teste';
+src: url('./fonts/Pokemon.ttf');
+}
+.navbar{
+  background-color: rgb(238,21,21);
+}
 body{
-  background-color: rgb(56, 62, 114);
+  background-color: rgb(92,185,255);
+}
+h3{
+  font-family: 'teste';
+  color:rgb(0, 0, 0);
+  font-size: 40px;
 }
 .load {
   width: 20px;
@@ -32,11 +44,12 @@ body{
 }
 
 .card {
-  margin: 4px;
-  width: 200px;
+  margin: 20px 20px;
+  width: 250px;
   
   object-fit: cover;
 }
+
 @keyframes loading {
   0%,
   100% {
