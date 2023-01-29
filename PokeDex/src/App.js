@@ -9,7 +9,7 @@ function App() {
   }, []);
 
   async function getdata() {
-    await fetch("https://pokeapi.co/api/v2/pokemon?limit=10", {
+    await fetch("https://pokeapi.co/api/v2/pokemon?limit=108", {
       method: "get",
     })
       .then((res) => res.json())
@@ -22,11 +22,11 @@ function App() {
   return (
     <div>
       {console.log(data)}
-      <nav className="navbar navbar-expand-md   bg-dark">
+      <nav className="navbar  navbar-expand-md   bg-dark">
         <button
           data-bs-toggle="collapse"
           data-bs-target="#teste"
-          className="navbar-toggler bg-white"
+          className="navbar-toggler ms-3 bg-white"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -43,14 +43,24 @@ function App() {
           </li>
         </ul>
       </nav>
+      <div className="row container-fluid container_pokemons">
+
       {data ? (
+        
         data.map((data) => {
           return (
-            <img
+            
+            <div className="card border border-primary">
+              <div className="card-body">
+              <img
+            className="pokemon border w-100"
               alt=""
               key={data.sprites.front_default}
               src={data.sprites.front_default}
             ></img>
+              </div>
+
+            </div>
           );
         })
       ) : (
@@ -60,6 +70,7 @@ function App() {
           <div className="load"></div>
         </div>
       )}
+       </div>
     </div>
   );
 }
