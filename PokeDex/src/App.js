@@ -10,7 +10,10 @@ function App() {
   useEffect(() => {
     getdata();
   }, []);
-
+const changeSearch = (e) =>{
+  console.log(e.target.value)
+  setsearch(e.target.value)
+}
   async function getdata() {
     await fetch("https://pokeapi.co/api/v2/pokemon?limit=200", {
       method: "get",
@@ -25,8 +28,8 @@ function App() {
   return (
     <div>
       {console.log(data)}
-      <Navbar />
-      <MainPokemons data={data} />
+      <Navbar  onSearchChange={changeSearch}/>
+      <MainPokemons search={search} data={data} />
     </div>
   );
 }

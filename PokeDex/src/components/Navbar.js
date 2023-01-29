@@ -1,6 +1,6 @@
 import React from "react";
-
-function Navbar() {
+import pokedex from '../assets/pokedx.png'
+function Navbar({onSearchChange}) {
   return (
     <nav className="navbar  navbar-expand-md">
       <button
@@ -11,23 +11,9 @@ function Navbar() {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <ul id="teste" className="navbar-nav navbar-collapse collapse ">
-        <li className="nav-item ">
-          <a href="*" className="nav-link text-white">
-            Inicio
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href="*" className="nav-link text-white">
-            Inicio
-          </a>
-        </li>
-        <li className="nav-item">
-          <a href="*" className="nav-link text-white">
-            Inicio
-          </a>
-        </li>
-      </ul>
+      <img src={pokedex} className="pokedex"></img>
+       <input onChange={(e) => onSearchChange(e)} placeholder="search" className="search" type={"search"}></input>
+      
     </nav>
   );
 }

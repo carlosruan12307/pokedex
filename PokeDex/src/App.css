@@ -7,6 +7,15 @@
 font-family: 'teste';
 src: url('./fonts/Pokemon.ttf');
 }
+.pokedex{
+  height: 50px;
+  margin: 0px 30px;
+}
+.search{
+margin: 0px 30px;
+padding: 5px;
+
+}
 .navbar{
   background-color: rgb(238,21,21);
 }

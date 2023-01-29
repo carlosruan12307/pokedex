@@ -1,6 +1,6 @@
 import React from "react";
 
-function MainPokemons({ data }) {
+function MainPokemons({ data,search }) {
   var colors = {
     normal: "#A8A77A",
     fire: "#EE8130",
@@ -32,7 +32,7 @@ function MainPokemons({ data }) {
               color = colors[key];
             }
           });
-          if (data.sprites.front_default && data.name.includes("")) {
+          if (data.sprites.front_default && data.name.includes(search)) {
             return (
               <div className="card" style={{ backgroundColor: `${color}` }}>
                 <div className="card-header">
