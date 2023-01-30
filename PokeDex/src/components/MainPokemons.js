@@ -39,7 +39,8 @@ function MainPokemons({ data,search }) {
                   <img
                     className="pokemon  w-100"
                     alt=""
-                    key={data['sprites']['other']['official-artwork']['front_default']}
+                    key={data.id}
+                    id={data.id}
                     
                     src={data['sprites']['other']['official-artwork']['front_default']}
                   ></img>

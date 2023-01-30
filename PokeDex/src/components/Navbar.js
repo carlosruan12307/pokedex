@@ -10,8 +10,9 @@ function Navbar({onSearchChange}) {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
+      
 
-      <img src={pokedex} className="pokedex"></img>
+      <img data-bs-toggle="modal" data-bs-target="#modalP" alt="" src={pokedex} className="pokedex"></img>
        <input onChange={(e) => onSearchChange(e)} placeholder="search" className="search" type={"search"}></input>
       
     </nav>

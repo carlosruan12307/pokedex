@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import MainPokemons from "./components/MainPokemons";
+import ModalPokemon from "./components/ModalPokemon";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -30,6 +31,7 @@ const changeSearch = (e) =>{
       {console.log(data)}
       <Navbar  onSearchChange={changeSearch}/>
       <MainPokemons search={search} data={data} />
+      <ModalPokemon/>
     </div>
   );
 }

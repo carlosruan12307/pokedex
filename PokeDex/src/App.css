@@ -10,11 +10,16 @@ src: url('./fonts/Pokemon.ttf');
 .pokedex{
   height: 50px;
   margin: 0px 30px;
+  cursor: pointer;
 }
 .search{
 margin: 0px 30px;
 padding: 5px;
 
+
+}
+.search:focus{
+  outline: solid rgb(92,185,255);
 }
 .navbar{
   background-color: rgb(238,21,21);
