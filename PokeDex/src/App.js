@@ -15,7 +15,7 @@ const changeSearch = (e) =>{
   setsearch(e.target.value)
 }
   async function getdata() {
-    await fetch("https://pokeapi.co/api/v2/pokemon?limit=200", {
+    await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000", {
       method: "get",
     })
       .then((res) => res.json())

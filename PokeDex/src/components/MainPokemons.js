@@ -32,19 +32,21 @@ function MainPokemons({ data,search }) {
               color = colors[key];
             }
           });
-          if (data.sprites.front_default && data.name.includes(search)) {
+          if (data.name.includes(search)) {
             return (
               <div className="card" style={{ backgroundColor: `${color}` }}>
                 <div className="card-header">
                   <img
                     className="pokemon  w-100"
                     alt=""
-                    key={data.sprites.front_default}
-                    src={data.sprites.front_default}
+                    key={data['sprites']['other']['official-artwork']['front_default']}
+                    
+                    src={data['sprites']['other']['official-artwork']['front_default']}
                   ></img>
                 </div>
                 <div className="card-body">
                   <h3 className="h-colorido">{data.name}</h3>
+                  <h3>{data.id}</h3>
                 </div>
               </div>
             );
