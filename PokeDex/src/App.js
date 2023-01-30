@@ -7,13 +7,19 @@ import Navbar from "./components/Navbar";
 function App() {
   const [data, setdata] = useState();
   const [search, setsearch] = useState("");
-
+  const[dataPokemon,setdataPokemon] = useState({
+    data: "",
+    colorPokemon: ""
+  })
   useEffect(() => {
     getdata();
   }, []);
 const changeSearch = (e) =>{
   console.log(e.target.value)
   setsearch(e.target.value)
+}
+const onClickPokemon = (data,color) =>{
+setdataPokemon({...dataPokemon,data : data,color: color});
 }
   async function getdata() {
     await fetch("https://pokeapi.co/api/v2/pokemon?limit=30", {
@@ -30,8 +36,8 @@ const changeSearch = (e) =>{
     <div>
       {console.log(data)}
       <Navbar  onSearchChange={changeSearch}/>
-      <MainPokemons search={search} data={data} />
-      <ModalPokemon/>
+      <MainPokemons search={search} data={data} onClickPokemon={onClickPokemon} />
+      <ModalPokemon pokemon={dataPokemon} />
     </div>
   );
 }

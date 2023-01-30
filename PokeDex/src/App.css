@@ -23,6 +23,7 @@ padding: 5px;
 }
 .navbar{
   background-color: rgb(238,21,21);
+  width: 100%;
 }
 body{
   background-color: rgb(92,185,255);
@@ -49,14 +50,15 @@ h3{
   justify-content: center;
 }
 .container_pokemons {
-  padding: 20px 10px;
-  
-  margin: 1px;
+  box-sizing: border-box;
+  margin: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+.pokemon-image-modal{
+  width: 100%;
+}
 .modal-dialog{
   margin: 10% 40%;
 }

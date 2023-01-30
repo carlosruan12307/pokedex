@@ -1,6 +1,9 @@
 import React from "react";
 
-function MainPokemons({ data,search }) {
+function MainPokemons({ data,search,onClickPokemon }) {
+  const teste = () =>{
+    console.log('teste')
+  }
   var colors = {
     normal: "#A8A77A",
     fire: "#EE8130",
@@ -22,7 +25,7 @@ function MainPokemons({ data,search }) {
     fairy: "#D685AD",
   };
   return (
-    <div className="row container-fluid  container_pokemons">
+    <div className="row  container_pokemons">
       {data ? (
         data.map((data) => {
           var color = "";
@@ -34,7 +37,7 @@ function MainPokemons({ data,search }) {
           });
           if (data.name.includes(search)) {
             return (
-              <div data-bs-toggle="modal" data-bs-target="#modalP"  className="card" style={{ backgroundColor: `${color}` }}>
+              <div onClick={() => onClickPokemon(data,color)} data-bs-toggle="modal" data-bs-target="#modalP"  className="card" style={{ backgroundColor: `${color}` }}>
                 <div className="card-header">
                   <img
                     className="pokemon  w-100"
