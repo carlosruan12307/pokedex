@@ -34,7 +34,7 @@ function MainPokemons({ data,search }) {
           });
           if (data.name.includes(search)) {
             return (
-              <div className="card" style={{ backgroundColor: `${color}` }}>
+              <div data-bs-toggle="modal" data-bs-target="#modalP"  className="card" style={{ backgroundColor: `${color}` }}>
                 <div className="card-header">
                   <img
                     className="pokemon  w-100"
@@ -46,8 +46,9 @@ function MainPokemons({ data,search }) {
                   ></img>
                 </div>
                 <div className="card-body">
+                <h5>{"#" + data.id}</h5>
                   <h3 className="h-colorido">{data.name}</h3>
-                  <h3>{data.id}</h3>
+                
                 </div>
               </div>
             );

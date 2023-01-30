@@ -2,7 +2,7 @@ import React from 'react'
 
 function ModalPokemon() {
   return (
-    <div id='modalP' className='modal'>
+    <div id='modalP' className='modal ala'>
 <div className='modal-dialog'>
 <div className='modal-content'>
 <div className='modal-header'>

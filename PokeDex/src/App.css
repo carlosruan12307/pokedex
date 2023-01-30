@@ -42,7 +42,7 @@ h3{
   animation: loading 2.5s ease-in-out infinite;
 }
 .pokemon {
-  cursor: pointer;
+ 
 }
 .pai {
   align-items: center;
@@ -57,10 +57,13 @@ h3{
   justify-content: center;
 }
 
+.modal-dialog{
+  margin: 10% 40%;
+}
 .card {
   margin: 20px 20px;
   width: 250px;
-  
+  cursor: pointer;
   object-fit: cover;
 }
 
