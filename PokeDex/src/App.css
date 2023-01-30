@@ -60,8 +60,18 @@ h3{
   width: 100%;
 }
 .modal-dialog{
-  margin: 10% 40%;
+  margin: 5% 40%;
+
 }
+.modal-content{
+
+}
+.modal{
+  overflow:hidden;
+  }
+  .modal-body{
+  overflow:auto;
+  }
 .card {
   margin: 20px 20px;
   width: 250px;
