@@ -22,7 +22,7 @@ const onClickPokemon = (data,color) =>{
 setdataPokemon({...dataPokemon,data : data,color: color});
 }
   async function getdata() {
-    await fetch("https://pokeapi.co/api/v2/pokemon?limit=30", {
+    await fetch("https://pokeapi.co/api/v2/pokemon?limit=10", {
       method: "get",
     })
       .then((res) => res.json())
