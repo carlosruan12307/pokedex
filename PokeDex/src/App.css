@@ -81,14 +81,29 @@ outline: black solid;
 
   border: none;
 }
-  
+.modal-footer{
+  padding: 80px 30px;
+  display: flex;
+  justify-content: center;
+}
+.pokemon-name-modal{
+  width: 350px;
+  margin-bottom: 30px;
+}
+.container-stat{
+  padding: 10px;
+  outline: black 1px solid;
+  box-shadow: 3px 5px 2px black;
+  width: 45%;
+
+}
 .card {
   margin: 50px 20px 5px;
   width: 250px;
   cursor: pointer;
   object-fit: cover;
   position: relative;
-  
+  justify-self: flex-start;
 }
 .card:hover{
  animation: cardAnimation 2s ease-in-out;
