@@ -3,13 +3,13 @@ import pokedex from '../assets/pokedx.png'
 function Navbar({onSearchChange}) {
   return (
     <nav className="navbar  navbar-expand-md">
-      <button
+      {/* <button
         data-bs-toggle="collapse"
         data-bs-target="#teste"
         className="navbar-toggler ms-3 bg-white"
       >
         <span className="navbar-toggler-icon"></span>
-      </button>
+      </button> */}
       
 
       <img alt="" src={pokedex} className="pokedex"></img>
