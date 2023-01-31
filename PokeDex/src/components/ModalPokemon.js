@@ -3,9 +3,9 @@ import React, { useEffect } from 'react'
 function ModalPokemon({pokemon}) {
     
   return (
-    <div>
-        { pokemon.data?
-<div id='modalP' className='modal'>
+    
+      
+<div id='modalP' className='modal fade show d-block'>
        
 <div className='modal-dialog'>
     <div className='container-float'>
@@ -50,10 +50,8 @@ function ModalPokemon({pokemon}) {
 </div>
 
     </div>
-    :
-    ""
-    }
-    </div>
+    
+   
     
   )
 }

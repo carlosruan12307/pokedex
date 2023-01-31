@@ -37,7 +37,10 @@ function MainPokemons({ data,search,onClickPokemon }) {
           });
           if (data.name.includes(search)) {
             return (
-              <div onClick={() => onClickPokemon(data,color)} data-bs-toggle="modal" data-bs-target="#modalP"  className="card" style={{ backgroundColor: `${color}` }}>
+              <div onClick={(e) => {
+                
+                onClickPokemon(data,color,e)
+              }}  className="card" style={{ backgroundColor: `${color}` }}>
                 <div className="card-header">
                   <img
                     className="pokemon  w-100"

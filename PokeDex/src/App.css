@@ -42,8 +42,15 @@ h3{
 
   animation: loading 2.5s ease-in-out infinite;
 }
-.pokemon {
- 
+.modal-dialog{
+  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: -1% auto -4% auto;
+  
 }
 .pai {
   align-items: center;
@@ -52,10 +59,11 @@ h3{
 .container_pokemons {
   box-sizing: border-box;
   margin: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+display: flex;
+justify-content: center;
+align-items: center;
 }
+
 .pokemon-image-modal{
 
 position: relative; 
@@ -74,6 +82,7 @@ z-index: 1000;
 .modal-content{
 border-radius: 60px;
 outline: black solid;
+
 
 }
 .modal-header, .modal-footer{
@@ -99,8 +108,16 @@ outline: black solid;
   
 
 }
+.modal-body{
+  
+  
+}
 .modal{
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  
+
   
 }
 .card {

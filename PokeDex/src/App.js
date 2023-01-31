@@ -7,20 +7,28 @@ import Navbar from "./components/Navbar";
 function App() {
   const [data, setdata] = useState();
   const [search, setsearch] = useState("");
-  const[dataPokemon,setdataPokemon] = useState({
+  const [dataPokemon, setdataPokemon] = useState({
     data: "",
-    colorPokemon: ""
-  })
+    color: "",
+  });
   useEffect(() => {
     getdata();
   }, []);
-const changeSearch = (e) =>{
-  
-  setsearch(e.target.value)
-}
-const onClickPokemon = (data,color) =>{
-setdataPokemon({...dataPokemon,data : data,color: color});
-}
+  window.onclick = function (e) {
+    if (e.target === document.getElementById("modalP")) {
+      document.getElementById("modalP").classList.remove("show");
+      document.getElementById("modalP").classList.remove("d-block");
+    }
+  };
+
+  const changeSearch = (e) => {
+    setsearch(e.target.value);
+  };
+  const onClickPokemon = (data, color, e) => {
+    setdataPokemon({ ...dataPokemon, data: data, color: color });
+    document.getElementById("modalP").classList.add("show");
+    document.getElementById("modalP").classList.add("d-block");
+  };
   async function getdata() {
     await fetch("https://pokeapi.co/api/v2/pokemon?limit=200", {
       method: "get",
@@ -34,10 +42,13 @@ setdataPokemon({...dataPokemon,data : data,color: color});
   }
   return (
     <div>
-     
-      <Navbar  onSearchChange={changeSearch}/>
-      <MainPokemons search={search} data={data} onClickPokemon={onClickPokemon} />
-      <ModalPokemon pokemon={dataPokemon} />
+      <Navbar onSearchChange={changeSearch} />
+      <MainPokemons
+        search={search}
+        data={data}
+        onClickPokemon={onClickPokemon}
+      />
+      {dataPokemon.data ? <ModalPokemon pokemon={dataPokemon} /> : ""}
     </div>
   );
 }
