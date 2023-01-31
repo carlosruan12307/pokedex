@@ -70,6 +70,7 @@ z-index: 1000;
   justify-content: center;
 }
 
+
 .modal-content{
 border-radius: 60px;
 outline: black solid;
@@ -90,9 +91,12 @@ outline: black solid;
 }
 .container-stat{
   padding: 10px;
+  margin: 10px;
   outline: black 1px solid;
   box-shadow: 3px 5px 2px black;
   width: 45%;
+  height: 100px;
+  
 
 }
 .modal{
