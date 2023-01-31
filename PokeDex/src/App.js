@@ -15,14 +15,14 @@ function App() {
     getdata();
   }, []);
 const changeSearch = (e) =>{
-  console.log(e.target.value)
+  
   setsearch(e.target.value)
 }
 const onClickPokemon = (data,color) =>{
 setdataPokemon({...dataPokemon,data : data,color: color});
 }
   async function getdata() {
-    await fetch("https://pokeapi.co/api/v2/pokemon?limit=10000", {
+    await fetch("https://pokeapi.co/api/v2/pokemon?limit=200", {
       method: "get",
     })
       .then((res) => res.json())
@@ -34,7 +34,7 @@ setdataPokemon({...dataPokemon,data : data,color: color});
   }
   return (
     <div>
-      {console.log(data)}
+     
       <Navbar  onSearchChange={changeSearch}/>
       <MainPokemons search={search} data={data} onClickPokemon={onClickPokemon} />
       <ModalPokemon pokemon={dataPokemon} />

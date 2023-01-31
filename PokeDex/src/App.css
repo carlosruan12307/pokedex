@@ -69,16 +69,14 @@ z-index: 1000;
   align-items: center;
   justify-content: center;
 }
-.modal-dialog{
-  margin: 1% 40%;
 
-}
 .modal-content{
 border-radius: 60px;
 outline: black solid;
+
 }
 .modal-header, .modal-footer{
-
+  
   border: none;
 }
 .modal-footer{
@@ -96,6 +94,10 @@ outline: black solid;
   box-shadow: 3px 5px 2px black;
   width: 45%;
 
+}
+.modal{
+  width: 100%;
+  
 }
 .card {
   margin: 50px 20px 5px;

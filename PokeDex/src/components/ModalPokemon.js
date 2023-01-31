@@ -19,7 +19,7 @@ function ModalPokemon({pokemon}) {
 </div>
 
 <div className='modal-footer'>
-    
+    <h3 className='pokemon-name-modal'>{pokemon.data.name}</h3>
     <div className='container-stat'>
         <p>Height</p>
     <h4>{pokemon.data.height}m</h4>
