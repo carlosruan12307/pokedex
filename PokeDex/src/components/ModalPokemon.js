@@ -33,12 +33,12 @@ function ModalPokemon({pokemon}) {
     <h4>{pokemon.data.types[0].type.name}{pokemon.data.types[1]? "/" + pokemon.data.types[1].type.name : ""}</h4>
     </div>
     <div className='container-stat'>
-    <p>Stats</p>
+    <p>HP</p>
     <h4>{pokemon.data.stats[0].base_stat}hp</h4>
 
     </div>
     <div className='container-stat'>
-    <p>Hp</p>
+    <p>XP</p>
     <h4>{pokemon.data.base_experience}xp</h4>
 
     </div>
