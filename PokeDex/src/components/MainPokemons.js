@@ -1,9 +1,6 @@
 import React from "react";
 
-function MainPokemons({ data,search,onClickPokemon }) {
-  const teste = () =>{
-    console.log('teste')
-  }
+function MainPokemons({ data, search, onClickPokemon }) {
   var colors = {
     normal: "#A8A77A",
     fire: "#EE8130",
@@ -26,11 +23,13 @@ function MainPokemons({ data,search,onClickPokemon }) {
   };
   return (
     <div className="row  container_pokemons">
-      {console.log('rerender')}
+      {console.log("rerender")}
       {data ? (
+        // eslint-disable-next-line array-callback-return
         data.map((data) => {
           var color = "";
           var type = data.types[0].type.name;
+          // eslint-disable-next-line array-callback-return
           Object.keys(colors).map((key) => {
             if (type === key) {
               color = colors[key];
@@ -38,24 +37,29 @@ function MainPokemons({ data,search,onClickPokemon }) {
           });
           if (data.name.includes(search.toLowerCase())) {
             return (
-              <div onClick={(e) => {
-                
-                onClickPokemon(data,color,e)
-              }}  className="card" style={{ backgroundColor: `${color}` }}>
+              <div
+                onClick={(e) => {
+                  onClickPokemon(data, color, e);
+                }}
+                className="card"
+                style={{ backgroundColor: `${color}` }}
+              >
                 <div className="card-header">
                   <img
                     className="pokemon  w-100"
                     alt=""
                     key={data.id}
                     id={data.id}
-                    
-                    src={data['sprites']['other']['official-artwork']['front_default']}
+                    src={
+                      data["sprites"]["other"]["official-artwork"][
+                        "front_default"
+                      ]
+                    }
                   ></img>
                 </div>
                 <div className="card-body">
-                <h5>{"#" + data.id}</h5>
+                  <h5>{"#" + data.id}</h5>
                   <h3 className="h-colorido">{data.name}</h3>
-                
                 </div>
               </div>
             );

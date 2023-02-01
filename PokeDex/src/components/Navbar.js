@@ -1,8 +1,8 @@
 import React from "react";
-import pokedex from '../assets/pokedx.png'
-function Navbar({onSearchChange}) {
+import pokedex from "../assets/pokedx.png";
+function Navbar({ onSearchChange }) {
   return (
-    <nav className="navbar  navbar-expand-md">
+    <nav className="navbar  navbar-expand-md container-fluid ">
       {/* <button
         data-bs-toggle="collapse"
         data-bs-target="#teste"
@@ -10,11 +10,14 @@ function Navbar({onSearchChange}) {
       >
         <span className="navbar-toggler-icon"></span>
       </button> */}
-      
 
-      <img alt="" src={pokedex} className="pokedex"></img>
-       <input onChange={(e) => onSearchChange(e)} placeholder="search" className="search" type={"search"}></input>
-      
+      <img alt="" src={pokedex} className="pokedex mb-3"></img>
+      <input
+        onChange={(e) => onSearchChange(e)}
+        placeholder="Buscar Pokemon"
+        className="search mb-3 w-75"
+        type={"search"}
+      ></input>
     </nav>
   );
 }

@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-
 function ModalPokemon({ pokemon }) {
   return (
     <div id="modalP" className="modal fade show d-block">
@@ -29,7 +27,6 @@ function ModalPokemon({ pokemon }) {
           </div>
           <h3 className="pokemon-name-modal">{pokemon.data.name}</h3>
           <div className="modal-footer">
-            
             <div className="container-stat">
               <p>Height</p>
               <h4>{pokemon.data.height}m</h4>
