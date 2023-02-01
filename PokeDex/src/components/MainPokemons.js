@@ -26,6 +26,7 @@ function MainPokemons({ data,search,onClickPokemon }) {
   };
   return (
     <div className="row  container_pokemons">
+      {console.log('rerender')}
       {data ? (
         data.map((data) => {
           var color = "";
@@ -35,7 +36,7 @@ function MainPokemons({ data,search,onClickPokemon }) {
               color = colors[key];
             }
           });
-          if (data.name.includes(search)) {
+          if (data.name.includes(search.toLowerCase())) {
             return (
               <div onClick={(e) => {
                 
